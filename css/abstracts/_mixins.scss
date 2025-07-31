@@ -1,0 +1,11 @@
+@mixin respond($size) {
+   $base: 16px;
+   $newSize: calc($size / $base) * 1em;
+   @media screen and (max-width: $newSize) {
+      @content;
+   }
+}
+
+@mixin backgroundLinear($color1, $opacity1, $color2, $opacity2, $url) {
+   background-image: linear-gradient(rgba($color1, $opacity1), rgba($color2, $opacity2)), url($url);
+}
