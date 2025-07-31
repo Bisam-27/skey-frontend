@@ -183,6 +183,7 @@ class ApiService {
     });
   }
 
+<<<<<<< HEAD
   async applyCouponToCart(code) {
     const endpoint = '/cart/coupon';
     return this.makeRequest(endpoint, {
@@ -200,6 +201,8 @@ class ApiService {
     });
   }
 
+=======
+>>>>>>> d50f7640a3d9166810a66d639b906eca9050f02f
   // Wishlist API methods
   async addToWishlist(productId) {
     const endpoint = '/wishlist';
@@ -250,6 +253,7 @@ class ApiService {
     });
   }
 
+<<<<<<< HEAD
   // Coupon API methods
   async validateCoupon(code, orderAmount, productIds = []) {
     const endpoint = '/coupons/validate';
@@ -263,6 +267,8 @@ class ApiService {
     });
   }
 
+=======
+>>>>>>> d50f7640a3d9166810a66d639b906eca9050f02f
   // Homepage API methods
   async getHomepageContent() {
     const endpoint = '/homepage';

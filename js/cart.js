@@ -138,6 +138,7 @@ class CartManager {
     const heartStyle = isInWishlist ? 'filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);' : '';
     const heartTitle = isInWishlist ? 'Remove from wishlist' : 'Add to wishlist';
 
+<<<<<<< HEAD
     // Calculate pricing display
     const originalPrice = item.original_price || item.price;
     const discountedPrice = item.discounted_price || item.price;
@@ -156,6 +157,8 @@ class CartManager {
       priceDisplay = `<div class="cart__price">₹${item.price}</div>`;
     }
 
+=======
+>>>>>>> d50f7640a3d9166810a66d639b906eca9050f02f
     cartItem.innerHTML = `
       <div class="cart__img-wrapper">
         <img src="${this.getProductImageUrl(item.product_image)}" alt="${item.product_name}" class="cart__img" />
@@ -163,7 +166,11 @@ class CartManager {
       <div class="cart__contents-wrapper">
         <div class="cart__content-details">
           <div class="s bold">${item.product_name}</div>
+<<<<<<< HEAD
           ${priceDisplay}
+=======
+          <div class="cart__price">₹${item.price}</div>
+>>>>>>> d50f7640a3d9166810a66d639b906eca9050f02f
           <div class="bold cart__subtotal">Subtotal: ₹${item.subtotal}</div>
           <div class="cart__select-wrapper">
             <div>Qty:</div>
@@ -223,7 +230,10 @@ class CartManager {
 
     const totalAmount = this.cart.total_amount || 0;
     const itemCount = this.cart.item_count || 0;
+<<<<<<< HEAD
     const paymentDetails = this.cart.payment_details || {};
+=======
+>>>>>>> d50f7640a3d9166810a66d639b906eca9050f02f
 
     // Show summary
     summaryContainer.style.display = 'block';
@@ -239,6 +249,7 @@ class CartManager {
     itemCountElements.forEach(element => {
       element.textContent = itemCount;
     });
+<<<<<<< HEAD
 
     // Update payment details
     this.updatePaymentDetails(paymentDetails);
@@ -301,6 +312,8 @@ class CartManager {
         couponButton.classList.remove('cart__btn--remove');
       }
     }
+=======
+>>>>>>> d50f7640a3d9166810a66d639b906eca9050f02f
   }
 
   // Set up event listeners
@@ -332,6 +345,7 @@ class CartManager {
         this.addToWishlist(productId);
       }
     });
+<<<<<<< HEAD
 
     // Coupon button handler
     const couponButton = document.querySelector('.cart__btn');
@@ -361,6 +375,8 @@ class CartManager {
         this.proceedToCheckout();
       });
     }
+=======
+>>>>>>> d50f7640a3d9166810a66d639b906eca9050f02f
   }
 
   // Update item quantity
@@ -603,6 +619,7 @@ class CartManager {
     return `media/products/${imageUrl}`;
   }
 
+<<<<<<< HEAD
   // Handle coupon apply/remove action
   async handleCouponAction() {
     const couponButton = document.querySelector('.cart__btn');
@@ -668,11 +685,14 @@ class CartManager {
     }
   }
 
+=======
+>>>>>>> d50f7640a3d9166810a66d639b906eca9050f02f
   // Redirect to login
   redirectToLogin() {
     alert('Please login to view your cart');
     window.location.href = 'login.html';
   }
+<<<<<<< HEAD
 
   // Proceed to checkout
   proceedToCheckout() {
@@ -699,6 +719,8 @@ class CartManager {
     // All checks passed, proceed to checkout
     window.location.href = 'checkout.html';
   }
+=======
+>>>>>>> d50f7640a3d9166810a66d639b906eca9050f02f
 }
 
 // Initialize cart manager when DOM is loaded
