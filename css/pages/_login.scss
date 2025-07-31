@@ -1,0 +1,67 @@
+.login {
+  padding: 8rem 2.4rem;
+  background-color: $color-accent-bg;
+
+  &__form {
+    max-width: 70rem;
+    margin: 0 auto;
+    padding: 5rem;
+    background-color: $color-white;
+  }
+
+  &__info-wrapper {
+    margin-top: 2rem;
+
+    text-align: right;
+
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__btn-wrapper {
+  }
+}
+
+.signup {
+  padding: 16rem 2.4rem 8rem;
+
+  &__logo {
+    width: 100%;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 3.2rem;
+
+    @include respond(850px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__form {
+    width: 100%;
+    margin: 0 auto;
+    padding: 5rem;
+    background-color: $color-white;
+    box-shadow: 0 10px 20px rgba($color-black, 0.1);
+  }
+
+  &__title {
+    margin-bottom: 3.2rem;
+  }
+
+  &__info-wrapper {
+    margin-top: 2rem;
+
+    text-align: right;
+
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__btn-wrapper {
+  }
+}
