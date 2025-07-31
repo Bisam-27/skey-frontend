@@ -1,0 +1,63 @@
+*,
+*::after,
+*::before {
+   margin: 0;
+   padding: 0;
+   box-sizing: inherit;
+}
+
+html {
+   font-size: 62.5%;
+
+   @include respond(1024px) {
+      font-size: 56.25%;
+   }
+
+   @include respond(768px) {
+      font-size: 50%;
+   }
+}
+
+body {
+   box-sizing: border-box;
+   background-color: $color-white;
+
+   overflow-x: hidden;
+}
+
+::selection {
+   background-color: $color-primary;
+   color: $color-white;
+}
+
+a {
+   text-decoration: none;
+}
+
+a,
+button {
+   display: inline-block;
+}
+
+button,
+input,
+textarea {
+   outline: none;
+   border: none;
+
+   font-family: inherit;
+   font-size: inherit;
+}
+
+ol,
+ul {
+   list-style: none;
+}
+
+img {
+   display: block;
+   max-width: 100%;
+   border: 0;
+
+   object-fit: cover;
+}
