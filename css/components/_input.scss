@@ -1,0 +1,36 @@
+.input {
+  &:not(:last-child) {
+    margin-bottom: 1.6rem;
+  }
+
+  &--radio {
+    &:not(:last-child) {
+      margin-bottom: 0.4rem;
+    }
+    .input__label {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .input__control {
+      width: max-content;
+    }
+  }
+
+  &__label {
+    display: block;
+  }
+
+  &__control {
+    display: block;
+
+    width: 100%;
+    padding: 2rem;
+    background-color: $color-accent;
+
+    border: none;
+    font-size: inherit;
+  }
+}
