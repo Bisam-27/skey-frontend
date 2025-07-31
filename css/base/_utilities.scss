@@ -1,0 +1,21 @@
+.bold {
+  font-weight: 700;
+}
+
+.normal {
+  font-weight: 400;
+}
+
+.light {
+  font-weight: 300;
+}
+
+.container {
+  width: 100%;
+  max-width: 127.8rem;
+  margin: 0 auto;
+}
+
+.brand {
+  color: $color-primary;
+}
