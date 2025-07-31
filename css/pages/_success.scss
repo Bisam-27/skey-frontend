@@ -1,0 +1,33 @@
+.success {
+  padding: 16rem 2.4rem 8rem;
+  background-color: $color-accent-bg;
+
+  &__container {
+    max-width: 80rem;
+    margin: 0 auto;
+    background-color: $color-white;
+    box-shadow: 0 10px 20px rgba($color-black, 0.1);
+  }
+  &__img-wrapper {
+    height: 30rem;
+  }
+  &__img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+  }
+  &__content-wrapper {
+    padding: 3.2rem;
+  }
+  &__section {
+    padding: 1rem 0;
+    margin: 2rem 0;
+    border-top: 2px solid $color-gray;
+    border-bottom: 2px solid $color-gray;
+  }
+  &__list {
+  }
+  &__list-item {
+  }
+}

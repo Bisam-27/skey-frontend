@@ -1,0 +1,143 @@
+.profile {
+  padding: 4rem 2.4rem;
+  &__container {
+    display: grid;
+    grid-template-columns: 24rem 1fr;
+    grid-gap: 2rem;
+
+    @include respond(870px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__nav {
+    @include respond(870px) {
+      border-bottom: 2px solid $color-black;
+    }
+
+    @include respond(620px) {
+      padding-bottom: 2rem;
+    }
+  }
+
+  &__nav-title {
+    margin-bottom: 2rem;
+  }
+
+  &__nav-list {
+    @include respond(870px) {
+      display: grid;
+      grid-template-columns: repeat(4, max-content);
+      grid-gap: 1.2rem;
+    }
+
+    @include respond(620px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond(400px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__nav-list-item {
+    &:not(:last-child) {
+      margin-bottom: 1.2rem;
+
+      @include respond(620px) {
+        margin-bottom: unset;
+      }
+    }
+  }
+
+  &__nav-link {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+
+    padding: 1rem;
+    color: $color-black;
+
+    &--active {
+      font-weight: 700;
+    }
+
+    @include respond(870px) {
+      background-color: $color-accent;
+    }
+
+    &:hover {
+      background-color: $color-accent;
+    }
+  }
+
+  &__nav-icon-wrapper {
+  }
+
+  &__nav-icon {
+    width: 2.4rem;
+    height: 2.4rem;
+    object-fit: contain;
+  }
+
+  &__main {
+  }
+}
+
+.address {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+
+  @include respond(600px) {
+    grid-template-columns: 1fr;
+  }
+
+  &__single {
+    border: 2px solid $color-accent;
+  }
+
+  &__content {
+    padding: 2rem;
+  }
+
+  &__title-wrapper {
+  }
+
+  &__interaction-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 1rem;
+
+    margin-top: 2rem;
+  }
+
+  &__btn {
+    padding: 1rem 2rem;
+    background-color: transparent;
+
+    cursor: pointer;
+
+    &--edit {
+      color: $color-primary;
+      border: 2px solid $color-primary;
+
+      &:hover {
+        background-color: $color-primary;
+        color: $color-white;
+      }
+    }
+
+    &--delete {
+      color: red;
+      border: 2px solid red;
+
+      &:hover {
+        background-color: red;
+        color: $color-white;
+      }
+    }
+  }
+}
