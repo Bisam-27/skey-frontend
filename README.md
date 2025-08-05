@@ -1,93 +1,102 @@
-# Skeyy E-commerce Frontend
+# 🎨 Skeyy Frontend - Customer Portal
 
-A modern, responsive frontend for the Skeyy e-commerce platform, built with vanilla HTML, CSS (SCSS), and JavaScript.
+The customer-facing web application for the Skeyy e-commerce platform with modern UI, Google OAuth integration, and comprehensive shopping features.
 
-## 🚀 Overview
+## 🔗 Related Repositories
 
-The frontend provides a complete e-commerce shopping experience with a clean, modern design. It features responsive layouts, dynamic content loading, user authentication, shopping cart functionality, and comprehensive product browsing capabilities.
+- **Frontend Portal**: [https://github.com/Bisam-27/skey-frontend](https://github.com/Bisam-27/skey-frontend) (This Repository)
+- **Backend API**: [https://github.com/Bisam-27/skey-backend](https://github.com/Bisam-27/skey-backend)
+- **Admin Panel**: [https://github.com/Bisam-27/skey-adminpannel](https://github.com/Bisam-27/skey-adminpannel)
+- **Vendor Panel**: [https://github.com/Bisam-27/skey-vendorpannel](https://github.com/Bisam-27/skey-vendorpannel)
+
+## 📚 Documentation Links
+
+- [Backend API Documentation](https://github.com/Bisam-27/skey-backend#readme)
+- [Admin Panel Documentation](https://github.com/Bisam-27/skey-adminpannel#readme)
+- [Vendor Panel Documentation](https://github.com/Bisam-27/skey-vendorpannel#readme)
+
+## 🌟 Features
+
+### 🔐 Authentication System
+- **Traditional Login/Signup**: Email and password authentication
+- **Google OAuth Integration**: One-click signup/login with role selection modal
+- **JWT Token Management**: Secure client-side token handling
+- **Role-based Redirects**: Automatic redirection based on user role
+- **Session Management**: Persistent login sessions
+
+### 🛒 Shopping Experience
+- **Product Browsing**: Category-based product exploration
+- **Real-time Search**: Instant search results as you type
+- **Advanced Filtering**: Price, category, brand filters
+- **Product Details**: Comprehensive product information
+- **Shopping Cart**: Add, remove, update quantities
+- **Wishlist**: Save products for later
+- **Secure Checkout**: Complete purchase flow
+
+### 📱 User Interface
+- **Responsive Design**: Mobile-first approach
+- **Modern UI/UX**: Clean, intuitive interface
+- **Interactive Elements**: Smooth animations and transitions
+- **Accessibility**: WCAG compliant design
+- **Cross-browser Support**: Works on all modern browsers
 
 ## 🛠 Technology Stack
 
 - **HTML5**: Semantic markup and structure
 - **CSS3/SCSS**: Styling with Sass preprocessing
 - **Vanilla JavaScript**: Dynamic functionality and API integration
+- **Google OAuth 2.0**: Third-party authentication
+- **JWT Tokens**: Secure authentication
 - **Swiper.js**: Touch slider/carousel functionality
 - **Responsive Design**: Mobile-first approach
 - **RESTful API Integration**: Backend communication
 
-## 📁 Project Structure
+## 📁 File Structure
 
 ```
 frontend/
+├── index.html              # Homepage
+├── login.html             # Login page with Google OAuth
+├── signup.html            # Signup page with role selection
+├── browse.html            # Product browsing
+├── product.html           # Product details
+├── cart.html              # Shopping cart
+├── checkout.html          # Checkout process
+├── profile.html           # User profile
+├── orders.html            # Order history
+├── wishlist.html          # User wishlist
+├── about.html             # About page
+├── faqs.html              # FAQ page
+├── success.html           # Order success page
+├── address.html           # Address management
+├── change-address.html    # Address modification
 ├── css/
-│   ├── abstracts/
-│   │   ├── _mixins.scss           # SCSS mixins
-│   │   ├── _functions.scss        # SCSS functions
-│   │   └── _variables.scss        # SCSS variables
-│   ├── base/
-│   │   ├── _typography.scss       # Typography styles
-│   │   ├── _base.scss            # Base styles
-│   │   ├── _utilities.scss       # Utility classes
-│   │   └── _animations.scss      # Animation definitions
-│   ├── components/
-│   │   ├── _buttons.scss         # Button styles
-│   │   ├── _input.scss           # Input field styles
-│   │   ├── _links.scss           # Link styles
-│   │   ├── _toast.scss           # Toast notification styles
-│   │   └── _card.scss            # Card component styles
-│   ├── layout/
-│   │   ├── _navigation.scss      # Navigation styles
-│   │   ├── _footer.scss          # Footer styles
-│   │   └── _header.scss          # Header styles
-│   ├── pages/
-│   │   ├── _home.scss            # Homepage styles
-│   │   ├── _products.scss        # Product page styles
-│   │   ├── _cart.scss            # Cart page styles
-│   │   ├── _login.scss           # Login page styles
-│   │   ├── _dashboard.scss       # Dashboard styles
-│   │   ├── _orders.scss          # Orders page styles
-│   │   ├── _profile.scss         # Profile page styles
-│   │   ├── _checkout.scss        # Checkout page styles
-│   │   ├── _success.scss         # Success page styles
-│   │   ├── _about.scss           # About page styles
-│   │   └── _search.scss          # Search page styles
-│   ├── main.scss                 # Main SCSS file
-│   ├── main.css                  # Compiled CSS
-│   ├── main.min.css             # Minified CSS
-│   ├── auth.css                  # Authentication styles
-│   ├── dynamic.css              # Dynamic styles
-│   ├── navbar-dropdown.css      # Navigation dropdown styles
-│   └── success.css              # Success page styles
+│   ├── abstracts/         # SCSS variables, mixins, functions
+│   ├── base/              # Base styles, typography, utilities
+│   ├── components/        # Reusable UI components
+│   ├── layout/            # Navigation, header, footer
+│   ├── pages/             # Page-specific styles
+│   ├── main.scss          # Main SCSS file
+│   ├── main.min.css       # Compiled & minified CSS
+│   ├── auth.css           # Authentication styles with Google OAuth
+│   ├── dynamic.css        # Dynamic content styles
+│   └── success.css        # Success page styles
 ├── js/
-│   ├── api.js                    # API communication layer
-│   ├── app.js                    # Main application logic
-│   ├── auth.js                   # Authentication handling
-│   ├── cart.js                   # Shopping cart functionality
-│   ├── categories.js             # Category management
-│   ├── checkout.js               # Checkout process
-│   ├── global-search.js          # Global search functionality
-│   ├── product-detail.js         # Product detail page logic
-│   ├── products.js               # Product listing logic
-│   ├── success.js                # Success page logic
-│   └── wishlist.js               # Wishlist functionality
-├── img/                          # Static images and icons
-├── media/
-│   └── products/                 # Product images
-├── about.html                    # About page
-├── address.html                  # Address management
-├── browse.html                   # Product browsing
-├── cart.html                     # Shopping cart
-├── change-address.html           # Address modification
-├── checkout.html                 # Checkout process
-├── faqs.html                     # FAQ page
-├── index.html                    # Homepage
-├── login.html                    # User login
-├── orders.html                   # Order history
-├── product.html                  # Product detail page
-├── profile.html                  # User profile
-├── signup.html                   # User registration
-├── success.html                  # Order success page
-└── wishlist.html                 # User wishlist
+│   ├── auth.js            # Authentication & Google OAuth
+│   ├── products.js        # Product management
+│   ├── cart.js            # Shopping cart
+│   ├── checkout.js        # Checkout process
+│   ├── orders.js          # Order history
+│   ├── wishlist.js        # Wishlist management
+│   ├── global-search.js   # Real-time search
+│   ├── unified-signup.js  # Signup handling
+│   ├── product-detail.js  # Product details
+│   ├── categories.js      # Category management
+│   ├── success.js         # Success page logic
+│   └── app.js             # Main application logic
+├── img/                   # Images and assets
+└── media/                 # Product images
+    └── products/          # Product image directory
 ```
 
 ## 🎨 Design System
