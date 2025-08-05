@@ -446,7 +446,7 @@ function initializeSignupForm() {
 }
 
 // Google OAuth configuration
-const GOOGLE_CLIENT_ID = '96328381016-bmfdjscc3rfh8576dhpmlo57pgk9d0ue.apps.googleusercontent.com'; // Replace with your actual client ID
+const GOOGLE_CLIENT_ID = 'Your client id'; // Replace with your actual client ID
 
 // Initialize Google OAuth
 function initializeGoogleAuth() {
