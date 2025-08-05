@@ -1,0 +1,25 @@
+.header {
+  position: relative;
+  z-index: 1;
+
+  background-color: $color-white;
+  padding: 14rem 2.4rem 2.4rem;
+
+  color: $color-black;
+  border-bottom: 2px solid $color-gray;
+
+  @include respond(840px) {
+    padding: 20rem 2.4rem 4rem;
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    height: 100%;
+    width: 100%;
+    opacity: 0.4;
+  }
+}
