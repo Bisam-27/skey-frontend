@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-time Search Demo - Skeyy</title>
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .demo-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .demo-title {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .demo-description {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 4px solid #007bff;
+        }
+        .search-container {
+            position: relative;
+            margin: 30px 0;
+        }
+        .nav__search-wrapper {
+            display: flex;
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 50px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .nav__search-wrapper:focus-within {
+            border-color: #007bff;
+            box-shadow: 0 2px 20px rgba(0, 123, 255, 0.2);
+        }
+        .nav__input {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            background: transparent;
+        }
+        .nav__input::placeholder {
+            color: #999;
+        }
+        .nav__search-btn {
+            padding: 15px 20px;
+            background: #007bff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .nav__search-btn:hover {
+            background: #0056b3;
+        }
+        .nav__search-icon {
+            width: 20px;
+            height: 20px;
+            filter: brightness(0) invert(1);
+        }
+        .features-list {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        .features-list h3 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .features-list ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .features-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .features-list li:last-child {
+            border-bottom: none;
+        }
+        .features-list li::before {
+            content: "✓";
+            color: #28a745;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <h1 class="demo-title">🔍 Enhanced Real-time Search Demo</h1>
+        
+        <div class="demo-description">
+            <h3>How it works:</h3>
+            <p>Start typing in the search box below to see real-time product suggestions. The search will show complete product information including images, prices, stock status, categories, and ratings as you type!</p>
+        </div>
+
+        <div class="search-container">
+            <form class="nav__search-wrapper">
+                <input
+                    type="text"
+                    class="nav__input"
+                    placeholder="Try searching for 'beauty', 'watch', 'shoes', or any product..."
+                />
+                <button type="submit" class="nav__search-btn">
+                    <img
+                        src="img/icon-search.svg"
+                        alt="Search"
+                        class="nav__search-icon"
+                    />
+                </button>
+            </form>
+        </div>
+
+        <div class="features-list">
+            <h3>🚀 Enhanced Search Features:</h3>
+            <ul>
+                <li>Real-time search results as you type (250ms debounce)</li>
+                <li>Complete product information display</li>
+                <li>Product images with fallback handling</li>
+                <li>Price information with discount calculations</li>
+                <li>Stock status indicators (In Stock, Low Stock, Out of Stock)</li>
+                <li>Category and subcategory information</li>
+                <li>Brand information display</li>
+                <li>Product ratings with star display</li>
+                <li>Product descriptions (truncated for readability)</li>
+                <li>Keyboard navigation support (Arrow keys, Enter, Escape)</li>
+                <li>Loading states and empty result handling</li>
+                <li>"View All Results" option for comprehensive search</li>
+                <li>Mobile responsive design</li>
+                <li>Search by product name, category, subcategory, and description</li>
+            </ul>
+        </div>
+
+        <div style="margin-top: 30px; text-align: center; color: #666;">
+            <p><strong>Note:</strong> Make sure the backend server is running on port 3000 for the search to work properly.</p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/api.js"></script>
+    <script src="js/global-search.js"></script>
+    <script>
+        // Initialize search when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            const globalSearch = new GlobalSearch();
+            globalSearch.init();
+            
+            // Make globalSearch available globally for the "View All Results" feature
+            window.globalSearch = globalSearch;
+            
+            console.log('🔍 Real-time search demo initialized!');
+        });
+    </script>
+</body>
+</html>
