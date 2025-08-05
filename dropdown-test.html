@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dropdown Test - Skeyy</title>
+    <link rel="stylesheet" href="css/main.min.css?v2" />
+    <link rel="stylesheet" href="css/auth.css" />
+    <style>
+      body {
+        padding-top: 120px;
+      }
+      .test-section {
+        padding: 2rem;
+        margin: 2rem;
+        border: 2px solid #ccc;
+        border-radius: 8px;
+      }
+      .test-button {
+        background: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        margin: 10px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav" id="js-nav">
+      <!-- ANNOUNCEMENT -->
+      <div class="nav__announcement">
+        <div class="container">
+          <div class="nav__announcement-wrapper">
+            <div class="nav__announcement-item">
+              <a href="browse.html" class="nav__announcement-link"
+                >Dropdown Test Page</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- NAV BAR -->
+      <div class="nav__upper">
+        <div class="container">
+          <div class="nav__upper-wrapper">
+            <div class="nav__logo-wrapper">
+              <a href="index.html" class="nav__logo-link">
+                <img src="img/skey_logo.jpg" alt="" class="nav__logo" />
+              </a>
+            </div>
+
+            <div class="nav__interaction-wrapper">
+              <ul class="nav__list">
+                <li class="nav__list-item">
+                  <a href="wishlist.html" class="nav__btn">
+                    <img
+                      src="img/icon-heart.svg"
+                      alt=""
+                      class="nav__btn-icon"
+                    />
+                  </a>
+                </li>
+
+                <li class="nav__list-item">
+                  <a href="profile.html" class="nav__btn">
+                    <img src="img/icon-user.svg" alt="" class="nav__btn-icon" />
+                  </a>
+                </li>
+
+                <li class="nav__list-item">
+                  <a href="cart.html" class="nav__btn">
+                    <img src="img/icon-cart.svg" alt="" class="nav__btn-icon" />
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <div class="container">
+        <h1>Dropdown Menu Test</h1>
+        
+        <div class="test-section">
+          <h2>Test Authentication States</h2>
+          <p>Click the buttons below to simulate different authentication states:</p>
+          
+          <button class="test-button" onclick="simulateLogin()">
+            Simulate Login (Show Dropdown)
+          </button>
+          
+          <button class="test-button" onclick="simulateLogout()">
+            Simulate Logout (Hide Dropdown)
+          </button>
+          
+          <button class="test-button" onclick="authService.updateNavigation()">
+            Refresh Navigation
+          </button>
+        </div>
+
+        <div class="test-section">
+          <h2>Instructions</h2>
+          <ol>
+            <li>Click "Simulate Login" to see the dropdown menu appear</li>
+            <li>Hover over the user icon to see the dropdown with Profile and Logout options</li>
+            <li>Click "Simulate Logout" to return to the simple user icon</li>
+            <li>The dropdown should show icons next to Profile and Logout options</li>
+          </ol>
+        </div>
+      </div>
+    </main>
+
+    <script src="js/auth.js"></script>
+    <script>
+      // Test functions to simulate authentication states
+      function simulateLogin() {
+        // Store fake user data
+        localStorage.setItem('skeyy_auth_token', 'fake-token-123');
+        localStorage.setItem('skeyy_user_data', JSON.stringify({
+          id: 1,
+          email: 'test@example.com',
+          name: 'Test User'
+        }));
+        
+        // Update navigation
+        authService.updateNavigation();
+        
+        alert('Simulated login! Now hover over the user icon to see the dropdown.');
+      }
+      
+      function simulateLogout() {
+        // Clear auth data
+        localStorage.removeItem('skeyy_auth_token');
+        localStorage.removeItem('skeyy_user_data');
+        
+        // Update navigation
+        authService.updateNavigation();
+        
+        alert('Simulated logout! The dropdown should be hidden now.');
+      }
+      
+      // Initialize on page load
+      document.addEventListener('DOMContentLoaded', function() {
+        authService.updateNavigation();
+      });
+    </script>
+  </body>
+</html>
